@@ -1,0 +1,155 @@
+
+* {
+  font-family: 'BigBlueTermPlus Nerd Font Mono', 'FontAwesome', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #c0caf5; /* MUDADO: Cor da fonte (Tokio Night - Texto Principal) */
+}
+
+/* Fundo da Waybar Transparente (Mantido) */
+#waybar span {
+  font-size: 20px;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+}
+
+/* Módulos Principais (Tokio Night - Fundo Principal) */
+#workspaces,
+#window {
+
+  border-color:#7aa2f7;
+  border-style: solid;
+  border-width: 3px;
+  background-color: rgba(26, 27, 38, 0.9); /* MUDADO: #1a1b26 */
+
+  margin-top: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 10px;
+
+}
+#window{
+   padding: 0px 15px;
+}
+#custom-logo {
+    background-image: url('/home/emerson/Downloads/sakuraArch.png');
+    background-size: contain; /* Ou 'auto', ou um tamanho fixo ex: 24px 24px */
+    background-repeat: no-repeat;
+    background-position: center;
+
+    min-width: 30px;
+
+    color: transparent;
+}
+
+#clock,
+#custom-power {
+ border-color:#7aa2f7;
+  border-style: solid;
+   border-width: 2px 2px 2px 0;
+  background-color: rgba(26, 27, 38, 0.9); /* MUDADO: #1a1b26 */
+  margin-top: 6px;
+  margin-right: 6px;
+  padding: 4px 2px;
+  border-radius: 0 10px 10px 0;
+
+}
+
+/* Módulos da Esquerda (Tokio Night - Fundo Ligeiramente Mais Claro) */
+#tray,
+#custom-lock {
+  border-color:#7aa2f7;
+  border-style: solid;
+  border-width: 2px 2px 2px 0;
+  background-color: #7aa2f7; /* MUDADO: #292e42 */
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: 10px 0 0 10px;
+
+}
+
+/* Módulos do Meio (Tokio Night - Fundo Principal) */
+#custom-reboot,
+#bluetooth,
+#battery,
+#pulseaudio,
+#backlight,
+#custom-temperature,
+#memory,
+#cpu {
+  border-color:#7aa2f7;
+  border-style: solid;
+  border-width: 2px 0;
+  background-color: rgba(26, 27, 38, 0.9); /* MUDADO: #1a1b26 */
+  margin-top: 6px;
+  padding: 4px 2px;
+
+}
+
+#custpm-temperature.critical, /* (Mantive o typo "custpm" do seu original) */
+#pulseaudio.muted {
+  color: #f7768e; /* MUDADO: Vermelho do Tokio Night */
+  padding-top: 0;
+}
+
+#bluetooth:hover,
+#network:hover,
+#backlight:hover,
+#battery:hover,
+#pulseaudio:hover,
+#custom-temperature:hover,
+#memory:hover,
+#cpu:hover,
+#clock:hover,
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-power:hover,
+#window:hover {
+  background-color: rgba(65, 72, 104, 0.95); /* MUDADO: #414868 */
+}
+
+
+/* Workspaces: Hover */
+#workspaces button:hover {
+  background-color: rgba(122, 162, 247, 0.2); /* MUDADO: Marrom (cor de destaque) transparente */
+border-radius: 10px;
+}
+
+#workspaces button.active {
+background-color: #7aa2f7;
+border-radius: 0;
+
+
+
+}
+
+/* Workspaces: Inativos */
+#workspaces button {
+  background: transparent;
+
+}
+/* Janela (Mantido) */
+#window {
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Módulo #custom-locks (com 's') */
+#custom-locks {
+    border-color:#7aa2f7;
+  border-style: solid;
+   border-width: 2px;
+
+
+  background-color: rgba(26, 27, 38, 0.9); /* MUDADO: #1a1b26 */
+  padding: 4px 6px;
+  margin-top: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 10px;
+
+}

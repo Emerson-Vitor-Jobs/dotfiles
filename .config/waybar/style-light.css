@@ -1,0 +1,165 @@
+/* 全局设置 */
+* {
+   font-family: 'BigBlueTermPlus Nerd Font Mono', 'FontAwesome', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #111111; /* MUDADO: Cor da fonte para preto */
+}
+
+/* Fundo da Waybar Transparente (Mantido) */
+#waybar span {
+  font-size: 20px;
+}
+
+#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  box-shadow: none;
+}
+
+/* Módulos Principais (Bege Claro) */
+#workspaces,
+#window {
+  border-color:rgba(210, 180, 140, 1);
+border-style: solid;
+   border-width: 3px;
+  background-color: rgba(245, 245, 220, 0.9); /* MUDADO: Bege Claro */
+
+  margin-top: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 10px;
+
+}
+
+
+#window{
+   padding: 0px 15px;
+}
+/* Módulos da Direita (Bege Claro) */
+
+#clock,
+#custom-power {
+  border-color:rgba(210, 180, 140, 1);
+border-style: solid;
+   border-width: 2px 2px 2px 0;
+  background-color: rgba(245, 245, 220, 0.9); /* MUDADO: Bege Claro */
+  margin-top: 6px;
+  margin-right: 6px;
+  padding: 4px 2px;
+  border-radius: 0 10px 10px 0;
+
+}
+
+#custom-logo {
+    background-image: url('/home/emerson/Downloads/sakuraArch.png');
+    background-size: contain; /* Ou 'auto', ou um tamanho fixo ex: 24px 24px */
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Define um tamanho mínimo para o módulo não "sumir" */
+    min-width: 30px;
+
+    /* Esconde o " " que colocamos no format */
+    color: transparent;
+}
+
+
+
+/* Módulos da Esquerda (Bege Claro) */
+#tray,
+#custom-lock {
+  border-color:rgba(210, 180, 140, 1);
+
+border-style: solid;
+   border-width: 2px;
+  background-color: rgba(210, 180, 140, 0.9); /* MUDADO: Bege Escuro */
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: 10px 0 0 10px;
+
+}
+
+/* Módulos do Meio (Bege Claro) */
+#custom-reboot,
+#bluetooth,
+#battery,
+#pulseaudio,
+#backlight,
+#custom-temperature,
+#memory,
+#cpu {
+   border-color:rgba(210, 180, 140, 1);
+  border-style: solid;
+   border-width: 2px 0;
+  background-color: rgba(245, 245, 220, 0.9); /* MUDADO: Bege Claro */
+  margin-top: 6px;
+  padding: 4px 2px;
+  }
+
+/* Estados de Alerta (Mantido) */
+#custpm-temperature.critical, /* (Mantive o typo "custpm" do seu original) */
+#pulseaudio.muted {
+  color: #FF0000;
+  padding-top: 0;
+}
+
+/* Efeito Hover (Bege um pouco mais escuro) */
+#bluetooth:hover,
+#network:hover,
+/*#tray:hover,*/
+#backlight:hover,
+#battery:hover,
+#pulseaudio:hover,
+#custom-temperature:hover,
+#memory:hover,
+#cpu:hover,
+#clock:hover,
+#custom-lock:hover,
+#custom-reboot:hover,
+#custom-power:hover,
+/*#workspaces:hover,*/
+#window:hover {
+  background-color: rgba(235, 235, 210, 0.95); /* MUDADO: Bege mais escuro/acinzentado */
+}
+
+/* Workspaces: Hover */
+#workspaces button:hover {
+  background-color: rgba(139, 69, 19, 0.2); /* MUDADO: Marrom (cor de destaque) transparente */
+  border-radius: 10px;
+
+}
+
+#workspaces button.active {
+background-color: rgba(210, 180, 140, 1);
+border-radius: 0 ;
+
+
+
+}
+
+/* Workspaces: Inativos */
+#workspaces button {
+  background: transparent;
+
+}
+
+/* Janela (Mantido) */
+#window {
+  font-weight: 500;
+  font-style: italic;
+}
+
+#custom-locks {
+border-color:rgba(210, 180, 140, 1);
+  border-style: solid;
+  border-width: 2px;
+  background-color: rgba(245, 245, 220, 0.9); /* MUDADO: Bege Claro */
+  padding: 4px 6px;
+  margin-top: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 10px;
+
+
+}

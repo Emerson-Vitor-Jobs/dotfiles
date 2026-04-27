@@ -1,0 +1,4 @@
+module src.utils
+singleton Animations 1.0 Animations.qml
+singleton Formatters 1.0 Formatters.qml
+singleton Math 1.0 Math.qml

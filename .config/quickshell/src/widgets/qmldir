@@ -1,0 +1,5 @@
+module src.widgets
+BatteryWidget 1.0 battery/BatteryWidget.qml
+ClockWidget 1.0 clock/ClockWidget.qml
+VolumeWidget 1.0 volume/VolumeWidget.qml
+WorkspacesWidget 1.0 workspaces/WorkspacesWidget.qml

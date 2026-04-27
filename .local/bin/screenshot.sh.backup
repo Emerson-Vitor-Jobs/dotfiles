@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Diretório para salvar as capturas (usado apenas se não estiver copiando)
+output_dir="$HOME/Imagens/Capturas"
+mkdir -p "$output_dir"
+filename="$output_dir/$(date +'%Y-%m-%d_%H-%M-%S').png"
+
+# Função para copiar para a área de transferência
+copy_to_clipboard() {
+  wl-copy <"$1"
+  notify-send "Captura copiada!" "A imagem está na sua área de transferência."
+}
+
+# Opções para o Wofi (ícones apenas, sem texto)
+options="\n\n"
+
+# Exibe o menu Wofi
+chosen_option=$(echo -e "$options" | wofi --dmenu --prompt "Modo de Captura")
+
+# Verifica se o usuário pressionou Esc
+if [ -z "$chosen_option" ]; then
+  exit 0
+fi
+
+# Executa a captura e decide o que fazer com ela
+capture_command=""
+case "$chosen_option" in
+"")
+  # Primeira opção (seleção) - captura área selecionada
+  capture_command="grim -g '$(slurp)'"
+  ;;
+"")
+  # Segunda opção (tela cheia) - captura tela inteira
+  capture_command="grim"
+  ;;
+"")
+  # Terceira opção (janela) - captura janela ativa
+  geometry=$(hyprctl -j clients | jq -r '.[] | select(.focusHistoryID == 1) | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')
+  capture_command="grim -g '$geometry'"
+  ;;
+esac
+
+# Se o comando de captura foi definido, execute-o
+if [ -n "$capture_command" ]; then
+  # Verifica se o primeiro argumento do script é --copy
+  if [ "$1" = "--copy" ]; then
+    $capture_command "$filename"
+    notify-send "Captura de tela salva!" "$filename"
+
+  else
+
+    $capture_command - | wl-copy
+    notify-send "Captura copiada!" "A imagem está na sua área de transferência."
+
+  fi
+fi

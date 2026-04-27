@@ -1,0 +1,5 @@
+[0.037] Ignoring unknown config key: active_opacity
+[0.037] Ignoring unknown config key: inactive_opacity
+[0.037] Could not find included config file: /home/emerson/.config/kitty/current-theme.conf, ignoring
+[13,116] [PARSE ERROR] Escape codes to resize text area are not supported
+[13,120] [PARSE ERROR] Escape codes to resize text area are not supported
