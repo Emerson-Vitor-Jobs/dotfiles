@@ -1,0 +1,4 @@
+module src.panels
+ControlCenterPanel 1.0 ControlCenterPanel.qml
+LauncherPanel 1.0 LauncherPanel.qml
+NotificationPanel 1.0 NotificationPanel.qml

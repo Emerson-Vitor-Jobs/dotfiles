@@ -1,0 +1,6 @@
+module src.singletons
+singleton AudioService 1.0 AudioService.qml
+singleton FocusedMonitorStore 1.0 FocusedMonitorStore.qml
+singleton HyprlandService 1.0 HyprlandService.qml
+singleton Time 1.0 Time.qml
+singleton WorkspaceStore 1.0 WorkspaceStore.qml

@@ -1,0 +1,21 @@
+#!/bin/bash
+CONFIG_DIR="$HOME/.config/quickshell"
+SOCKET_PATH="/tmp/quickshell.sock"
+PIPE_PATH="/tmp/qs_pipe"
+
+rm -f "$SOCKET_PATH" "$PIPE_PATH"
+
+mkfifo "$PIPE_PATH"
+
+export QML_IMPORT_PATH="$CONFIG_DIR"
+
+echo "Quickshell operando via FIFO (Persistente)..."
+echo "Log disponível em: socat - UNIX-CONNECT:$SOCKET_PATH"
+
+socat UNIX-LISTEN:"$SOCKET_PATH",fork,reuseaddr OPEN:"$PIPE_PATH" &
+
+find "$CONFIG_DIR" -type f | entr -r -d sh -c "
+    echo 'Reiniciando Quickshell...'
+    stdbuf -oL -eL quickshell > \"$PIPE_PATH\" 2>&1
+"
+
