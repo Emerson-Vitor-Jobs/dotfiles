@@ -61,6 +61,14 @@ find ~/scripts -name "*.sh" -exec chmod +x {} + 2>/dev/null || true
 find ~/.config/hypr/scripts -name "*.sh" -exec chmod +x {} + 2>/dev/null || true
 find ~/.config/waybar -name "*.sh" -exec chmod +x {} + 2>/dev/null || true
 
+# Configurar SDDM (Login Screen) e Autologin
+echo "Restaurando configurações do SDDM e habilitando serviço..."
+if [ -d "etc_backup/sddm.conf.d" ]; then
+    sudo mkdir -p /etc/sddm.conf.d/
+    sudo cp -a etc_backup/sddm.conf.d/* /etc/sddm.conf.d/
+fi
+sudo systemctl enable sddm
+
 # Configurar o Fish como shell padrão
 if command -v fish >/dev/null 2>&1; then
     echo "Definindo o Fish como shell padrão..."
