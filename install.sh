@@ -1,8 +1,7 @@
 #!/bin/bash
 # install.sh - Instalador Automatizado de Ambiente Arch Linux (Emerson)
 # Execute este script no diretório raiz do pendrive (dentro da pasta dotfiles)
-set -e
-
+# Script de Instalação tolerante a pequenas falhas (remoção do set -e)
 echo "================================================="
 echo "   Iniciando a instalação do ambiente - Emerson"
 echo "================================================="
